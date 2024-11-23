@@ -1,0 +1,102 @@
+<?php
+    session_start();
+
+    if(isset($_SESSION['usuario'])){
+        header("location: Compras.php");
+    }
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./Assets/Img/logo.png">
+    <link rel="stylesheet" href="./Assets/Styles.css">
+    <script src="https://kit.fontawesome.com/87c8813f6b.js" crossorigin="anonymous"></script>
+
+    <title>Inicio de sesión</title>
+</head>
+<body>
+
+    <!----------Barra de navegación---------->
+    <header>
+      <div class="logo-container">
+         <img src="./Assets/Img/Principal/logo.png" alt="Logo de la empresa" class="logo">
+         <span class="company-name">EssenceWear</span>
+      </div>
+      <nav>
+         <a href="./Index.php" class="active">Home</a>
+         <a href="#">About</a>
+         <a href="#">Portfolio</a>
+         <a href="#">Services</a>
+      </nav>
+   </header>
+    <!---------------Formilario inicio de sesion -------------------->
+    <main>
+        <div class="contenedor-todo">
+            <div class="caja-trasera">
+                <div class="caja-trasera-login">
+                    <h3 class="T3">¿Ya tienes una cuenta?</h3>
+                    <p class="Parrafo">Inicia tu sesion para entrar a la página</p>
+                    <button id="btn__Iniciar">Iniciar sesión</button>
+                </div>
+                <div class="caja-trasera-register">
+                    <h3 class="T3">¿Aún no tienes cuenta?</h3>
+                    <p class="Parrafo">Crea tu cuenta para que realices tus compras</p>
+                    <button id="btn__Registrar">Regístrarse</button>
+                </div>
+            </div>
+            <!--------------Formulario Login & Register---------->
+            <div class="contenedor-login-register">
+                <form action="php/login_usuario_be.php" method="POST" class="formulario-login">
+                    <h4 class="T4">Iniciar sesión</h4>
+                    <input type="text" placeholder="Correo electronico" name="Correo">
+                    <input type="password" placeholder="Contraseña" name="Clave">
+                    <button class="btn1">Entrar</button>
+                </form>
+                <form action="php/registro_usuario_be.php" method="POST" class="formulario-register">
+                    <h4 class="T4">Regístrate</h4>
+                    <input type="text" placeholder="Nombre completo" name="Nombre_Completo">
+                    <input type="text" placeholder="Correo Electronico" name="Correo">
+                    <input type="text" placeholder="Usuario" name="Usuario">
+                    <input type="password" placeholder="Contraseña" name="Clave">
+                    <button class="btn1">Regístrarse</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!---------------Footer--------------->
+    <footer class="pie-pagina">
+        <div class="grupo1">
+            <div class="box">
+                <figure>
+                <a href="#">
+                    <img src="./Assets/Img/Principal/EssenceWear.png" alt="LogoEW">
+                </a>
+                </figure>
+            </div>
+            <div class="box">
+                <h2>Sobre nosotros</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas, commodi!</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas, commodi!</p>
+            </div>
+            <div class="box">
+                <h2>Siguenos en nuestras redes sociales</h2>
+                <div class="red-social">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-instagram"></a>
+                <a href="#" class="fa fa-x"></a>
+                <a href="#" class="fa fa-youtube"></a>
+                </div>
+            </div>
+        </div>
+        <div class="grupo2">
+            <small>&copy; 2024 <b>EssenceWear</b> - Todos los derechos reservados.</small>
+        </div>
+    </footer>
+    <script src="./Assets/ScriptInicioSesion.js"></script>
+    
+</body>
+</html>
